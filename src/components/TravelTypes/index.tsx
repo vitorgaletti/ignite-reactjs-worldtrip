@@ -1,0 +1,51 @@
+import { Grid } from '@chakra-ui/react';
+
+import { Circle } from './Circle';
+import { Description } from './Description';
+import { Images } from './Images';
+import { Item } from './Item';
+
+export function TravelTypes() {
+  return (
+    <Grid
+      as="section"
+      w="100%"
+      templateColumns={['1fr 1fr', '1fr 1fr', '1fr 1fr', 'repeat(5, 1fr)']}
+      justifyContent="space-between"
+      mx="auto"
+      my={['2.25rem', '5rem']}
+      maxWidth="1160px"
+      gap={6}
+    >
+      <Item>
+        <Circle />
+        <Images src={'./images/nightlife.svg'} alt={'vida noturna'} />
+        <Description>vida noturna</Description>
+      </Item>
+
+      <Item>
+        <Images src={'./images/beach.svg'} alt={'praia'} />
+        <Circle />
+        <Description>praia</Description>
+      </Item>
+
+      <Item>
+        <Images src={'./images/modern.svg'} alt={'moderno'} />
+        <Circle />
+        <Description>moderno</Description>
+      </Item>
+
+      <Item>
+        <Images src={'./images/classic.svg'} alt={'clássico'} />
+        <Circle />
+        <Description>clássico</Description>
+      </Item>
+
+      <Item colSpan={[2, 2, 2, 1]}>
+        <Images src={'./images/more.svg'} alt={'e mais...'} />
+        <Circle />
+        <Description>e mais...</Description>
+      </Item>
+    </Grid>
+  );
+}

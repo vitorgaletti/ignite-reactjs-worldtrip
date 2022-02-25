@@ -10,11 +10,11 @@ export function TravelTypes() {
     <Grid
       as="section"
       w="100%"
+      maxWidth="1160px"
       templateColumns={['1fr 1fr', '1fr 1fr', '1fr 1fr', 'repeat(5, 1fr)']}
       justifyContent="space-between"
       mx="auto"
       my={['2.25rem', '5rem']}
-      maxWidth="1160px"
       gap={6}
     >
       <Item>

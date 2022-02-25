@@ -8,7 +8,6 @@ export function Divider() {
       mx="auto"
       w={['3.75rem', '5.625rem']}
       border={['1px solid #47585B', '2px solid #47585B']}
-      mt={['2.25rem', '5rem']}
     ></Flex>
   );
 }

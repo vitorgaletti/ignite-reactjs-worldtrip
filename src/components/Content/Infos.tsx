@@ -7,7 +7,6 @@ import {
   PopoverBody,
   PopoverCloseButton,
   PopoverContent,
-  PopoverHeader,
   PopoverTrigger,
   Text
 } from '@chakra-ui/react';
@@ -109,7 +108,12 @@ export default function Infos() {
                 />
               </span>
             </PopoverTrigger>
-            <PopoverContent bg="gray.700" color="gray.50">
+            <PopoverContent
+              bg="gray.700"
+              color="gray.50"
+              w={['200px', 'max-content']}
+              h="auto"
+            >
               <PopoverArrow bg="gray.700" />
               <PopoverCloseButton color="gray.200" />
 
@@ -117,6 +121,7 @@ export default function Infos() {
                 fontWeight="400"
                 fontSize={['sm', 'lg']}
                 color="yellow.400"
+                mt="1rem"
               >
                 Paris, Roma, Praga, Lisboa, Londres e mais...
               </PopoverBody>

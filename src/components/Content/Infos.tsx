@@ -11,8 +11,9 @@ import {
   Text
 } from '@chakra-ui/react';
 import { RiInformationLine } from 'react-icons/ri';
+import { ContinentProps } from '../../pages/continent/[slug]';
 
-export default function Infos() {
+export default function Infos({ continent }: ContinentProps) {
   return (
     <Flex
       align="center"
@@ -35,7 +36,7 @@ export default function Infos() {
           textAlign={['center']}
           color="yellow.400"
         >
-          50
+          {continent?.countries}
         </Heading>
         <Text
           fontWeight={['400', '600']}
@@ -60,7 +61,7 @@ export default function Infos() {
           textAlign="center"
           color="yellow.400"
         >
-          60
+          {continent?.languages}
         </Heading>
         <Text
           fontWeight={['400', '600']}
@@ -85,7 +86,7 @@ export default function Infos() {
           textAlign="center"
           color="yellow.400"
         >
-          27
+          {continent?.cities}
         </Heading>
         <Text
           fontWeight={['400', '600']}
@@ -111,7 +112,7 @@ export default function Infos() {
             <PopoverContent
               bg="gray.700"
               color="gray.50"
-              w={['200px', 'max-content']}
+              w={['200px', '200px', '600px', 'max-content']}
               h="auto"
             >
               <PopoverArrow bg="gray.700" />
@@ -123,7 +124,7 @@ export default function Infos() {
                 color="yellow.400"
                 mt="1rem"
               >
-                Paris, Roma, Praga, Lisboa, Londres e mais...
+                {`${continent?.cities_list} e mais...`}
               </PopoverBody>
             </PopoverContent>
           </Popover>

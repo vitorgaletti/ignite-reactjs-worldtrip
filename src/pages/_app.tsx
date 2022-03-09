@@ -9,9 +9,18 @@ import 'swiper/css/scrollbar';
 
 import '../styles/swiper/styles.scss';
 
+import NextNProgress from 'nextjs-progressbar';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
+      <NextNProgress
+        color="#FFBA08"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+        showOnShallow={true}
+      />
       <Component {...pageProps} />
     </ChakraProvider>
   );

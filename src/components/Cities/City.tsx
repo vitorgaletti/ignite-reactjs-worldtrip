@@ -1,6 +1,13 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-export default function City() {
+export default function City({
+  city,
+  country,
+  thumbnail,
+  altThumbnail,
+  flag,
+  altFlag
+}) {
   return (
     <Box
       w="100%"
@@ -14,8 +21,8 @@ export default function City() {
         maxWidth="16rem"
         h="173px"
         mx="auto"
-        src="/images/london.png"
-        alt="Londres"
+        src={thumbnail}
+        alt={altThumbnail}
       />
       <Flex
         justify="space-between"
@@ -34,7 +41,7 @@ export default function City() {
             lineHeight="25px"
             color="gray.700"
           >
-            Londres
+            {city}
           </Heading>
           <Text
             fontFamily="Barlow"
@@ -44,7 +51,7 @@ export default function City() {
             color="gray.500"
             pt="3"
           >
-            Reino Unido
+            {country}
           </Text>
         </Flex>
         <Image
@@ -52,8 +59,8 @@ export default function City() {
           maxWidth="30px"
           h="30px"
           mx="auto"
-          src="/images/flag.png"
-          alt="Bandeira"
+          src={flag}
+          alt={altFlag}
           borderRadius="50%"
           objectFit="cover"
         />

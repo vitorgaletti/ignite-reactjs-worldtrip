@@ -10,6 +10,7 @@ import 'swiper/css/scrollbar';
 import '../styles/swiper/styles.scss';
 
 import NextNProgress from 'nextjs-progressbar';
+import ToggleColorMode from '../components/ToggleColorMode';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={3}
         showOnShallow={true}
       />
+      <ToggleColorMode />
       <Component {...pageProps} />
     </ChakraProvider>
   );

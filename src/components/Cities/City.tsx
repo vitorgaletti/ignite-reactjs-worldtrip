@@ -1,4 +1,11 @@
-import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useColorModeValue
+} from '@chakra-ui/react';
 
 export default function City({
   city,
@@ -8,6 +15,8 @@ export default function City({
   flag,
   altFlag
 }) {
+  const borderColor = useColorModeValue('rgba(255, 186, 8, 0.5)', 'yellow.400');
+  const borderWidth = useColorModeValue('1px', '2px');
   return (
     <Box
       w="100%"
@@ -30,7 +39,10 @@ export default function City({
         px="6"
         pt="1.125rem"
         pb="25px"
-        border="1px solid rgba(255, 186, 8, 0.5);"
+        borderWidth={borderWidth}
+        borderStyle="solid"
+        borderColor={borderColor}
+        // border="1px solid rgba(255, 186, 8, 0.5);"
         borderTop="0"
       >
         <Flex direction="column">

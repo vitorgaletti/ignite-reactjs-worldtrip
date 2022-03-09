@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 import Banner from '../components/Banner';
 import { Divider } from '../components/Divider';
 import { Header } from '../components/Header';
@@ -18,6 +18,7 @@ export interface ContinentProps {
 }
 
 export default function Home({ continents }: ContinentProps) {
+  const color = useColorModeValue('gray.700', 'gray.50');
   return (
     <Flex direction="column" w="100%" h="100%">
       <Header />
@@ -29,8 +30,9 @@ export default function Home({ continents }: ContinentProps) {
         fontSize={['xl', '2xl', '3xl', '4xl']}
         lineHeight={['30px', '54px']}
         textAlign="center"
-        color="gray.700"
+        color={color}
         mt={['1.5rem', '2rem', '2.25rem', '3.25rem']}
+        mb="15px"
       >
         Vamos nessa? <br /> Então escolha seu continente
       </Heading>

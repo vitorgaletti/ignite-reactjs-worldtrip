@@ -1,8 +1,9 @@
-import { Box, Grid, Heading } from '@chakra-ui/react';
+import { Box, Grid, Heading, useColorModeValue } from '@chakra-ui/react';
 import { ContinentProps } from '../../pages/continent/[slug]';
 import City from './City';
 
 export function Cities({ continent }: ContinentProps) {
+  const color = useColorModeValue('gray.700', 'gray.300');
   return (
     <Box as="section" mt={['8', '20']} mb={['1rem', '2.187rem']} mx="auto">
       <Heading
@@ -10,7 +11,7 @@ export function Cities({ continent }: ContinentProps) {
         fontSize={['2xl', '3xl', '3xl', '4xl']}
         lineHeight={['36px', '42px', '42px', '54px']}
         textAlign="left"
-        color="gray.700"
+        color={color}
       >
         Cidades +100
       </Heading>

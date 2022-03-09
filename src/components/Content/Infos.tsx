@@ -8,12 +8,18 @@ import {
   PopoverCloseButton,
   PopoverContent,
   PopoverTrigger,
-  Text
+  Text,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { RiInformationLine } from 'react-icons/ri';
 import { ContinentProps } from '../../pages/continent/[slug]';
 
 export default function Infos({ continent }: ContinentProps) {
+  const colorText = useColorModeValue('gray.700', 'gray.300');
+  const popoverIcon = useColorModeValue('gray.400', 'gray.300');
+  const bgPopoverContent = useColorModeValue('gray.700', 'gray.600');
+  const colorPopoverCloseButton = useColorModeValue('gray.200', 'gray.100');
+
   return (
     <Flex
       align="center"
@@ -43,7 +49,7 @@ export default function Infos({ continent }: ContinentProps) {
           fontSize={['lg', 'lg', 'xl', '2xl']}
           lineHeight={['27px', '32px', '36px']}
           textAlign="center"
-          color="gray.700"
+          color={colorText}
         >
           países
         </Text>
@@ -68,7 +74,7 @@ export default function Infos({ continent }: ContinentProps) {
           fontSize={['lg', 'lg', 'xl', '2xl']}
           lineHeight={['27px', '32px', '36px']}
           textAlign="center"
-          color="gray.700"
+          color={colorText}
         >
           línguas
         </Text>
@@ -93,7 +99,7 @@ export default function Infos({ continent }: ContinentProps) {
           fontSize={['lg', 'lg', 'xl', '2xl']}
           lineHeight={['27px', '32px', '36px']}
           textAlign="center"
-          color="gray.700"
+          color={colorText}
         >
           cidades +100
           <Popover>
@@ -105,18 +111,17 @@ export default function Infos({ continent }: ContinentProps) {
                   h={['10px', '1rem']}
                   cursor="pointer"
                   ml="5px"
-                  color="gray.400"
+                  color={popoverIcon}
                 />
               </span>
             </PopoverTrigger>
             <PopoverContent
-              bg="gray.700"
-              color="gray.50"
+              bg={bgPopoverContent}
               w={['200px', '200px', '600px', 'max-content']}
               h="auto"
             >
               <PopoverArrow bg="gray.700" />
-              <PopoverCloseButton color="gray.200" />
+              <PopoverCloseButton color={colorPopoverCloseButton} />
 
               <PopoverBody
                 fontWeight="400"

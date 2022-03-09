@@ -1,4 +1,4 @@
-import { Flex, Grid, Icon } from '@chakra-ui/react';
+import { Flex, Grid, Icon, useColorModeValue } from '@chakra-ui/react';
 import { RiArrowLeftSLine } from 'react-icons/ri';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -7,6 +7,9 @@ import { Logo } from './Logo';
 export function Header() {
   const { asPath } = useRouter();
   const notHomePage = asPath !== '/';
+
+  const bg = useColorModeValue('white', 'gray.800');
+  const colorIcon = useColorModeValue('gray.800', 'gray.50');
 
   return (
     <Flex
@@ -17,7 +20,7 @@ export function Header() {
       px="1rem"
       align="center"
       justify="center"
-      bg="white"
+      bg={bg}
     >
       <Grid
         w="100%"
@@ -35,9 +38,8 @@ export function Header() {
                 as={RiArrowLeftSLine}
                 fontSize={[20, 40]}
                 justifySelf="start"
-              >
-                Olá
-              </Icon>
+                color={colorIcon}
+              ></Icon>
             </a>
           </Link>
         )}

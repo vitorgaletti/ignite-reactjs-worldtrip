@@ -34,6 +34,8 @@ export default function City({
         alt={altThumbnail}
       />
       <Flex
+        w="100%"
+        h="calc(100% - 173px)"
         justify="space-between"
         alignItems="center"
         px="6"
@@ -42,7 +44,6 @@ export default function City({
         borderWidth={borderWidth}
         borderStyle="solid"
         borderColor={borderColor}
-        // border="1px solid rgba(255, 186, 8, 0.5);"
         borderTop="0"
       >
         <Flex direction="column">
